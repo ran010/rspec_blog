@@ -1,6 +1,14 @@
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  BLOG
+  BLOG POST
 </button>
+
+
+<% @posts.each do |post| %>
+  <h2><%= post.title %> by <%= post.author %></h2>
+  <p>
+    <%= post.content %>
+  </p>
+<% end %>
 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
