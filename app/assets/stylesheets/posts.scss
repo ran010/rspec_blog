@@ -1,3 +1,25 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.title{
+    background :#add8e6;
+    
+}
+.container{
+    padding: 50px 30px 50px 30px;
+    background: #8D2F5D;
+    margin: 50px 10px 60px 90px;
+}
+.btn_cus{
+    
+    margin: 10px;
+}
+.panel_cus{
+ background: #AA7839; 
+  box-shadow: 10px 10px 5px #888888;
+}
+html, body {
+	font-family: 'Play', sans-serif;
+	background: #2b2b2b;
+	margin: 0;
+}

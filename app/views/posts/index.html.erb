@@ -1,16 +1,32 @@
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  BLOG POST
-</button>
+</br>
+  <% @posts.each do |post| %>
+<div class="panel panel-default panel_cus ">
+  <div class="title">
+  <h3>  <%= link_to post.title, post_path(post.id) %> </h3>
+   
+    </div>
+    <hr>
+    <div class="panel-body ">
+       <h4>by <%= post.author %></h4>
+    <%= post.created_at.strftime("%Y-%m-%d") %>
+      <p class="content">
+      <%= post.content %>
+      </p>
+  </div>
+</div>
 
-
-<% @posts.each do |post| %>
-  <h2><%= post.title %> by <%= post.author %></h2>
-  <p>
-    <%= post.content %>
-  </p>
 <% end %>
+  
+  
 
-<h1>HELLO WORLD</h1>
+  
+  
+
+
+
+
+
+
 
 
 
@@ -19,15 +35,20 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Add Post</h4>
       </div>
+      <%= simple_form_for Post.new do |f| %>
       <div class="modal-body">
-        ...
+        
+        <%= f.input :title %>
+        <%= f.input :author %>
+        <%= f.input :content %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit 'Submit', class: 'btn btn-primary' %>
+        
+      <% end %>
     </div>
   </div>
 </div>

@@ -1,14 +1,14 @@
 class PostsController < ApplicationController
     def index
-        @posts = Post.all
+           @posts = Post.all
+       
     end
     
-    def show
-        @posts = Post.find(params[:id])
-    end
+ 
     
     def new
         @post =Post.new
+           
     end
     
   
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     end
     
     def edit
-         @posts = Post.find(params[:id])
+         @post = Post.find(params[:id])
     end
     
     def update
@@ -40,7 +40,9 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to root_path
     end
-    
+    def show
+        @post = Post.find(params[:id])
+    end
     private
     
     def post_params
